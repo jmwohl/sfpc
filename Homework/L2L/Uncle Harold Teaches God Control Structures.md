@@ -23,8 +23,8 @@ Long before the Earth and Sun and Moon existed as we know them today, when God w
 "Ok.  So we'll start by creating a new Planet called earth, and setting its colors to blue and green."
 
 ```javascript
-	earth = new Planet();
-	earth.setColors("blue", "green");
+earth = new Planet();
+earth.setColors("blue", "green");
 ```
 
 "And then we'll need a star," said Harold.
@@ -43,7 +43,7 @@ sun.setBrightness(REALLY_BRIGHT);
 
 "Well, a day is just what we call it when the planet has rotated one time.  So we can create a function for rotating the earth once, and call it "day."
 
-```
+```javascript
 function day() {
 	earth.rotateOnce();
 }
@@ -59,7 +59,7 @@ function day() {
 
 "That's easy," said God, "we'll just use the day function seven times in a row."  He immediately started scribbling.
 
-```
+```javascript
 function week() {
 	// 1
 	day();
@@ -88,9 +88,11 @@ function week() {
 
 "Alright.  Well, lucky for us, there is something called a 'for loop' that does  precisely this!  We just tell it what number to start with, when to stop, and by what increment it should count, and then we tell it what to do each time it counts the next number.  For our week, it would look like this:"
 
+```javascript
 for (count = 1; count <= 7;  count += 1) {
 	day();
 }
+```
 
 "Here we've said, 'Start at 1.  Keep counting until count is no longer less than or equal to seven.  Count up by one at a time.  And for every number you count, call the day method.'  That's it!"
 
