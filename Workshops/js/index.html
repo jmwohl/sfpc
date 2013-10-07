@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1>JavaScript</h1>
+
+	<h2>Topics</h2>
+	<ul>
+		<li>ECMAScript</li>
+		<li>weakly-typed</li>
+
+		<li>prototypal inheritance</li>
+		<li>Functions as first-class objects</li>
+		<li>Use of 'this' keyword</li>
+		<li>Strict equivalence</li>
+		<li>Modules</li>
+		<!-- <li>AMD, CommonJS</li> -->
+	</ul>
+
+
+	<!-- <script type="text/javascript" src="example.js"></script> -->
+
+	<script type="text/javascript">
+
+		// Weakly typed!
+		// 
+		// type-checking is notoriously convoluted in javascript.
+		// 
+		// the primative types:
+		var name;				// undefined
+		// console.log(name);
+		name = "Jon";			// string
+		name = 123;				// number (no difference between int, float, long, etc)
+		name = true;			// boolean
+		name = null;			// null (type: object) (not the same as undefined)
+	
+		name = [1, 2, 3];		// now an array (type: object)
+		
+		name = {				// now an object literal (type: object)
+			one: 1,
+			two: 2,
+			three: 3
+		};
+
+
+		function name() {
+			///
+		}
+
+		var Car = function() {
+			this.color = "blue";
+		}
+
+
+
+		// name = function() {		// still pretty much an
+		// 	// wee!
+		// };
+
+
+
+	</script>
+</body>
+</html>

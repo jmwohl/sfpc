@@ -1,0 +1,29 @@
+Language constructs:
+- variables
+- functions
+- types
+- whitespace?
+
+
+
+draw: d
+circle: c
+arc: a
+
+triangle: any triad played simultaneously
+rectangle: any four-note chord played simultaneously
+circle: any 3+ note run played up and down
+
+separate delimiter for statement end (two 8s?) and between arguments (two 1s)
+
+can define 
+
+
+0-1-2-3-4-5-6-7
+
+3578
+
+✐ ☐ 0,0 ↘ 100,100
+✐ ○ 0,0 ⟷ 100
+✐ ○ 0,0 ➲ 50
+✐ △ 0,0

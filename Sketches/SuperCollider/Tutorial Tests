@@ -1,0 +1,241 @@
+{[SinOsc.ar(440, 0, 0.2), SinOsc.ar(442, 0, 0.2)]}.play;
+
+
+f={3.0.rand;};
+f.value;
+f.value;
+
+f={arg a;a.value+3};
+f.value(3);
+g={3.0.rand;};
+f.value(g);
+
+
+(
+f={arg a, b;
+	a - b;
+};
+f.value(5,3);
+)
+
+f={arg a, b = 2; a + b;};
+
+f.value(8);
+
+g={|a, b| a + b};
+
+g.value(5, 10);
+
+(
+f={|a,b|
+	var firstResult, finalResult;
+	firstResult = a+b;
+	finalResult = firstResult * 2;
+	finalResult;
+};
+f.value(2,3);
+)
+
+
+(
+var myFunc;
+myFunc = {|input| input.postln;};
+myFunc.value("foo");
+myFunc.value("bar");
+)
+
+myFunc;
+
+
+
+
+
+{SinOsc.ar(440, 0, 0.2)}.play;
+
+(
+{ var ampOsc;
+	ampOsc = SinOsc.kr(0.5, 1.5pi, 0.5, 0.5);
+	SinOsc.ar(440, 0, ampOsc);
+}.play;
+)
+
+{SinOsc.ar([440, 442], 0, 0.2)}.play;
+
+(
+{ var freq;
+	freq = [[660, 880], [440, 660], 1320, 880].choose;
+	SinOsc.ar(freq, 0, 0.2);
+}.play;
+)
+
+{Pan2.ar(PinkNoise.ar(0.2), SinOsc.kr(0.5))}.play;
+
+{Pan2.ar(PinkNoise.ar(0.2), -0.9)}.play;
+
+
+
+// 07. Mix it Up
+
+{PinkNoise.ar(0.2) + SinOsc.ar(440, 0, 0.2) + Saw.ar(660, 0.2)}.play;
+
+
+
+// one channel
+{ Mix.new([SinOsc.ar(440, 0, 0.2), Saw.ar(660, 0.2)]).postln }.play;
+
+
+// combine two stereo array
+(
+{
+	var a, b;
+	a = [SinOsc.ar(440, 0, 0.2), Saw.ar(662, 0.2)];
+	b = [SinOsc.ar(442, 0, 0.2), Saw.ar(660, 0.2)];
+	Mix([a, b]).postln;
+}.play;
+)
+
+
+(
+var n = 8;
+{Mix.fill(n, {SinOsc.ar(500 + 500.0.rand, 0, 1/n)})}.play;
+)
+
+
+// Look at the post window for frequencies and indices
+(
+var n = 8;
+{
+	var l, r, both;
+	l = Mix.fill(n, {
+		arg index;
+		var freq;
+		index.postln;
+		freq = 440 * (index+1);
+		freq.postln;
+		SinOsc.ar(freq, 0, 1/(n*2));
+	});
+	r = Mix.fill(n, {
+		arg index;
+		var freq;
+		index.postln;
+		freq = 660 * (index+1);
+		freq.postln;
+		SinOsc.ar(freq, 0, 1/(n*2));
+	});
+	both = [l, r];
+	Mix([both]).postln;
+}.scope;
+)
+
+
+// SynthDefs
+
+SynthDef.new("test-SinOsc", {Out.ar(0, [SinOsc.ar(440, 0, 0.2), SinOsc.ar(442, 0, 0.2)]) }).play;
+
+
+x = { SinOsc.ar(660, 0, 0.2) }.play;
+y = SynthDef.new("tutorial-SinOsc", { Out.ar(0, SinOsc.ar(440, 0, 0.2)) }).play;
+x.free;    // free just x
+y.free;    // free just y
+
+
+SynthDef.new("tutorial-PinkNoise", { Out.ar(0, PinkNoise.ar(0.3)) }).add;
+
+x = Synth.new("tutorial-PinkNoise");
+y = Synth.new("tutorial-PinkNoise");
+x.free;
+y.free;
+
+// using Rand UGen
+SynthDef("Rand", { Out.ar(0, SinOsc.ar(Rand(440, 660), 0, 0.2)) }).add;
+x = Synth("Rand");
+y = Synth("Rand");
+z = Synth("Rand");
+x.free; y.free;
+
+
+// using args
+(
+SynthDef("tutorial-args", { arg freq = 440, out = 0;
+    Out.ar(out, SinOsc.ar(freq, 0, 0.2));
+}).add;
+)
+x = Synth("tutorial-args");                // no args, so default values
+y = Synth("tutorial-args", ["freq", 660]);        // change freq
+z = Synth("tutorial-args", ["freq", 880, "out", 1]);    // change freq and output channel
+x.free; y.free; z.free;
+
+
+// modifying args at runtime
+s.start;
+(
+SynthDef.new("tutorial-args", { arg freq = 440, out = 0;
+    Out.ar(out, SinOsc.ar(freq, 0, 0.2));
+}).add;
+)
+s.scope; // scope so you can see the effect
+x = Synth.new("tutorial-args");
+x.set("freq", 660);
+x.set("freq", 880, "out", 1);
+x.free;
+
+"a String" === "a String";
+\aSymbol === \aSymbol;
+
+(
+{
+({RHPF.ar(OnePole.ar(BrownNoise.ar, 0.99), LPF.ar(BrownNoise.ar, 14)
+* 400 + 500, 0.03, 0.003)}!2)
++ ({RHPF.ar(OnePole.ar(BrownNoise.ar, 0.99), LPF.ar(BrownNoise.ar, 20)
+* 800 + 1000, 0.03, 0.005)}!2)
+* 4
+}.play
+)
+
+play{SinOsc.ar(OnePole.ar(Mix(
+LFSaw.ar([1,0.99],[0,0.6],2000,2000).trunc([400,600])*[1,-1]
+),0.98)).dup*0.1}
+
+
+(
+SynthDef(\atari2600, {|out= 0, gate= 1, tone0= 5,
+tone1= 8, freq0= 10, freq1= 20, amp= 1, pan= 0|
+var e, z;
+e= EnvGen.kr(Env.asr(0.01, amp, 0.05), gate, doneAction:2);
+z= Atari2600.ar(tone0, tone1, freq0, freq1, 15, 15);
+Out.ar(out, Pan2.ar(z*e, pan));
+}).store
+)
+
+ // And a pattern to play it:
+(
+Pbind(
+\instrument, \atari2600,
+\dur, Pseq([0.25, 0.25, 0.25, 0.45], inf),
+\amp, 0.8,
+\tone0, Pseq([Pseq([2, 5], 32), Pseq([3, 5], 32)], inf),
+\tone1, 14,
+\freq0, Pseq([Pbrown(28, 31, 1, 32),
+Pbrown(23, 26, 3, 32)], inf),
+\freq1, Pseq([Pn(10, 16), Pn(11, 16)], inf)
+).play
+)
+
+s.boot;
+
+// Load an audio file
+s.sendMsg(\b_allocRead, 10, "sounds/WaterJugDeep1.wav");
+
+// Now define the granular synth
+(
+{
+var b = 10, trate, dur;
+trate = MouseY.kr(2,120,1);
+dur = 1.2 / trate;
+TGrains.ar(2, Impulse.ar(trate), b,
+(1.2 ** WhiteNoise.kr(3).round(1)),
+MouseX.kr(0,BufDur.kr(b)),
+dur,
+WhiteNoise.kr(0.6), 0.1);
+}.play;
+)
