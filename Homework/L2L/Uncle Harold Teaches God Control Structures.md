@@ -1,6 +1,6 @@
 ![The Sun and the Earth](../../assets/GodMakesEarth.jpg "The Sun and the Earth")
 
-# Uncle Hal Teaches God about Control Structures
+# Uncle Harold Teaches God about Control Structures
 
 Long before the Earth and Sun and Moon existed as we know them today, when God was just a little boy, he was sitting in deity school struggling with his Intro to Programming the Universe homework.  It was this whole concept of "time" — days, weeks, months, years, etc.  What the heck were they?  How were they related?  And how was he ever going to make a beautiful planetary home for his imaginary human friends?
 
