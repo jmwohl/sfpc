@@ -1,4 +1,4 @@
-# Builds, Libraries, and General Thoughts on C++
+# Using Sublime for C++ and openFrameworks.md
 
 First, a brief preface:  **I am new to C/C++, new to gcc/g++, new to make and Makefiles, and new to openFrameworks.**  I am not entirely new to software development though, and I guess I have strong opinions about the tools that I use.  And maybe I'm resistant to change.  More than anything, I like to know how things work, and don't like being confused.  So when I started with C/C++ with Xcode, it was frustrating — the tool was foreign, felt heavy and slow, and didn't let me work the way I was used to.
 
@@ -19,8 +19,7 @@ In order to get code completion working, I had to add include paths for my versi
 
 ```
 {
-    "options": [
-        "-Isystem", 
+    "options": [ 
         "-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include",
         "-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/c++/4.2.1",
         "-I/usr/local/lib/OF/libs/**"
