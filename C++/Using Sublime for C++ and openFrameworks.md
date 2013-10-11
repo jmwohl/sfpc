@@ -22,12 +22,13 @@ In order to get code completion working, I had to add include paths for my versi
     "options": [ 
         "-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include",
         "-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/c++/4.2.1",
-        "-I/usr/local/lib/OF/libs/**"
+        "-I/usr/local/lib/OF/0.8.0/libs/**",
+        "-I/usr/local/lib/OF/0.8.0/addons/**"
     ]
 }
 ```
 
-As you can see, I added a copy of the OF libs to my /usr/local/lib, which seems be to where libs naturally go.  That "-I" at the beginning is the clang flag for 'include path'.
+The bottom two are symlinks that I created in /usr/local/lib, which seems be to where libs naturally go.   They link to the libs and addons directories that I keep elsewhere on my computer.  That "-I" at the beginning is the clang flag for 'include path'.
 
 ### The Good Stuff - openFrameworks Development
 
