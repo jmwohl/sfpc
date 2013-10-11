@@ -6,10 +6,25 @@ First, a brief preface:  **I am new to C/C++, new to gcc/g++, new to make and Ma
 
 Two things I knew were going to be important to me: smart code hinting and completion, and auto formatting.  Thankfully other folks had already solved these problems for me via a couple handy packages:
 
-    1) SublimeAStyleFormatter - for auto formatting, with lots of configurable options
-    2) SublimeClang - for code completion, also configurable
+    1) SublimeAStyleFormatter - for auto formatting
+    2) SublimeClang - for code completion
 
 I installed both via the Package Control.  I'm using Sublime Text 2 — for Sublime Text 3, it seems that you need to install SublimeClang manually (thanks to @jedahan for figuring that out).
+
+#### Setting up SublimeAStyleFormatter Package
+
+I only made one small change here.  By default, the formatter plugin uses "ansi" style formatting for brackets — that is, brackets are placed on the line below where the block starts.  I prefer to have the bracket on the same line, so I changed the "style" setting in *Preferences->Package Settings->SublimeAStyleFormatter->Settings User* to "java":
+
+```
+{
+    "options_default": {
+        // Default bracket style
+        "style": "java"
+    }
+}
+```
+
+There are many additional options which I may investigate as I start to use the formatter more.
 
 #### Setting up SublimeClang Package
 
