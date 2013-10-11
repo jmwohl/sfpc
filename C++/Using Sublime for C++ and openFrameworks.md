@@ -1,4 +1,4 @@
-# Using Sublime for C++ and openFrameworks.md
+# Using Sublime for C++ and openFrameworks
 
 First, a brief preface:  **I am new to C/C++, new to gcc/g++, new to make and Makefiles, and new to openFrameworks.**  I am not entirely new to software development though, and I guess I have strong opinions about the tools that I use.  And maybe I'm resistant to change.  More than anything, I like to know how things work, and don't like being confused.  So when I started with C/C++ with Xcode, it was frustrating — the tool was foreign, felt heavy and slow, and didn't let me work the way I was used to.
 
@@ -76,6 +76,6 @@ APPNAME = SomeName
 Ok.  Now we should be able to work on new OF projects by following these steps:
 
     1) Create a new OF project with the projectGenerator
-    2) In the terminal, navigate to the generated project dir, and type ```subl .``` to open it in sublime.
-    3) Once the project opens, choose *Project->Save Project As...* from the menu and give it the same name as you did in the project generator.
-    4) Start writing code!  When you're ready to build, hit **cmd-b**.
+    2) In the terminal, navigate to the generated project dir, and type 'subl .'' to open it in sublime.
+    3) Once the project opens, choose 'Project->Save Project As...'' from the menu and give it the same name as you did in the project generator.
+    4) Start writing code!  When you're ready to build, hit 'cmd-b'.
