@@ -13,7 +13,7 @@ I installed both via the Package Control.  I'm using Sublime Text 2 — for Subl
 
 #### Setting up SublimeClang Package
 
-In order to get code completion working, I had to add include paths for my version of Xcode and openFrameworks.  After installing SublimeClang, go to *Preferences->Package Settings->SublimeClang->Settings User* and make it looks like this, changing the paths to the correct paths for your computer:
+In order to get code completion working, I had to add include paths for my version of Xcode and openFrameworks.  After installing SublimeClang, go to *Preferences->Package Settings->SublimeClang->Settings User* and add the correct paths.  For me, it looked like this:
 
 ```
 {
