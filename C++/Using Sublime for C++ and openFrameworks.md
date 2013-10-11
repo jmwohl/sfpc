@@ -4,14 +4,12 @@ First, a brief preface:  **I am new to C/C++, new to gcc/g++, new to make and Ma
 
 ### Setting up SublimeText for C/C++ development
 
-**NOTE: This guide is for SublimeText 2, not 3.  Unfortunately there doesn't seem to be a good code completion package for SublimeText 3 yet.**
-
 Two things I knew were going to be important to me: smart code hinting and completion, and auto formatting.  Thankfully other folks had already solved these problems for me via a couple handy packages:
 
     1) SublimeAStyleFormatter - for auto formatting, with lots of configurable options
     2) SublimeClang - for code completion, also configurable
 
-I installed both via the Package Control.
+I installed both via the Package Control.  I'm using Sublime Text 2 — for Sublime Text 3, it seems that you need to install SublimeClang manually (thanks to @jedahan for figuring that out).
 
 #### Setting up SublimeClang Package
 
