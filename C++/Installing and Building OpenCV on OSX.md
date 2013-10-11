@@ -2,7 +2,7 @@
 
 ### Setting up SublimeText for C/C++ development
 
-If you haven't already, you'll want to set up SublimeText for C/C++ development.  [see link]
+If you haven't already, you'll want to [set up SublimeText for C/C++ development]("Using Sublime for C++ and openFrameworks.md" "Yay!").
 
 ### Installing OpenCV on OSX 10.8
 
