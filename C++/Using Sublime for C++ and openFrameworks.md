@@ -49,18 +49,19 @@ Now here's the exciting part:  It's entirely EASY to build OF projects without X
 
 ```
 {
-    "cmd": ["cd '$project_path' && make Debug && make run Debug"],
+    "cmd": ["make Debug && make run Debug"],
+    "working_dir": "${project_path:${folder}}",
     "shell": true,
 
     "variants": [
         { 
-            "cmd": ["cd '$project_path' && make && make run"],
-            "name": "OF Release and Run",
+            "cmd": ["make && make run"],
+            "name": "Run",
             "shell": true
         },
         { 
-            "cmd": ["cd '$project_path' && make clean"],
-            "name": "OF Clean",
+            "cmd": ["make clean"],
+            "name": "Clean",
             "shell": true
         }
     ]
