@@ -30,7 +30,7 @@ The bottom two are symlinks that I created in /usr/local/lib, which seems be to 
 
 ### The Good Stuff - openFrameworks Development
 
-Now here's the exciting part:  It's entirely EASY to build OF projects without Xcode!  Who knew?  Turns out that projects created with the Project Generator include a Makefile that is already set up to work with make.  In order to get things working nicely with SublimeText, I created a new build system called OF.  To create a new build system go to *Tools->Build System->New Build System...*, and add the following:
+Now here's the exciting part:  It's entirely EASY to build OF projects without Xcode!  Who knew?  Turns out that projects created with the Project Generator include a Makefile that is already set up to work with make.  In order to get things working nicely with SublimeText, I created a new build system called OF.  To create a new build system go to *Tools->Build System->New Build System...* and add the following:
 
 ```
 {
